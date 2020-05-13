@@ -1,0 +1,22 @@
+mysql 설치 
+
+mysql-5.6.25-linux-glibc2.5-x86_64.tar.gz
+
+wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.6.25-linux-glibc2.5-x86_64.tar.gz
+
+groupadd mysql
+
+useradd -g mysql mysql
+yum -y install gcc-c++ gcc libaio library
+ 
+
+yum remove mysql
+cd /usr/local/
+tar zxvf mysql-5.6.25-linux-glibc2.5-x86_64.tar.gz
+ ln -snf mysql-5.6.25-linux-glibc2.5-x86_64 mysql
+cd mysql
+chown -R mysql
+chgrp -R mysql
+scripts/mysql_install_db --user=mysql 
+chown -R root 
+chown -R mysql data
